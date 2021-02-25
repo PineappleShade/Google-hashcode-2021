@@ -60,7 +60,8 @@ namespace Google_hashcode_2021
         }
         public void removeFromQueue(Car car)
         {
-            carQueue.Dequeue();
+            Console.WriteLine("Dequeuing '{0}'", carQueue.Dequeue());
+            Console.WriteLine(carQueue);
         }
     }
 }
