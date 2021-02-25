@@ -45,20 +45,31 @@ namespace Google_hashcode_2021
                 // Console.WriteLine(st.StreetName);
             }
 
-            foreach (Intersection inter in allIntersections)
+            foreach (Path pt in allPaths)
             {
-                Console.WriteLine(inter.Id);
-                Console.WriteLine("Input street:");
-                foreach (Street st in inter.StreetsInput)
+                foreach (Street st in pt.StreetsPaths)
                 {
-                    Console.WriteLine("    " + st.StreetName);
+                    Console.WriteLine(st.StreetName);
                 }
-                Console.WriteLine("Output street:");
-                foreach (Street st in inter.StreetsOutput)
-                {
-                    Console.WriteLine("    " + st.StreetName);
-                }
+
+                Console.WriteLine("");
+
             }
+
+            // foreach (Intersection inter in allIntersections)
+            // {
+            //     Console.WriteLine(inter.Id);
+            //     Console.WriteLine("Input street:");
+            //     foreach (Street st in inter.StreetsInput)
+            //     {
+            //         Console.WriteLine("    " + st.StreetName);
+            //     }
+            //     Console.WriteLine("Output street:");
+            //     foreach (Street st in inter.StreetsOutput)
+            //     {
+            //         Console.WriteLine("    " + st.StreetName);
+            //     }
+            // }
         }
 
 
