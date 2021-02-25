@@ -11,7 +11,13 @@ namespace Google_hashcode_2021
         private string streetName;
         private int travelTimeFromBeginingToEnd;
 
-
+        public Street(int startingIntersection, int endIntersection, string streetName, int travelTimeFromBeginingToEnd)
+        {
+            this.startingIntersection = startingIntersection;
+            this.endIntersection = endIntersection;
+            this.streetName = streetName;
+            this.travelTimeFromBeginingToEnd = travelTimeFromBeginingToEnd;
+        }
 
         public int StartingIntersection
         {
