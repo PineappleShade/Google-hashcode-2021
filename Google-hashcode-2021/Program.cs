@@ -19,6 +19,7 @@ namespace Google_hashcode_2021
         static List<Street> allStreets = new List<Street>();
         static List<Path> allPaths = new List<Path>();
         static List<Car> allCars = new List<Car>();
+        static List<KeyValuePair<Street, int>> trafficPerStreetOrdered;
 
         static void Main(string[] args)
         {
@@ -210,9 +211,15 @@ namespace Google_hashcode_2021
                 }
             }
 
+            // Remove all instances where the street traffic is 0
+            foreach (var item in dict.Where(kvp => kvp.Value == 0).ToList())
+            {
+                dict.Remove(item.Key);
+            }
+
             // Sort it by value
-            List<KeyValuePair<Street, int>> myList = dict.ToList();
-            myList.Sort(
+            trafficPerStreetOrdered = dict.ToList();
+            trafficPerStreetOrdered.Sort(
                 delegate (KeyValuePair<Street, int> pair1,
                 KeyValuePair<Street, int> pair2)
                 {
@@ -220,10 +227,9 @@ namespace Google_hashcode_2021
                     return pair2.Value.CompareTo(pair1.Value);
                 }
             );
-            
 
             // Print it all out
-            foreach (KeyValuePair<Street, int> kvp in myList)
+            foreach (KeyValuePair<Street, int> kvp in trafficPerStreetOrdered)
             {
                 // Console.WriteLine("Key = {0}, Value = {1}", kvp.Key.StreetName, kvp.Value);
             }
