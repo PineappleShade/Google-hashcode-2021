@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 
 namespace Google_hashcode_2021
@@ -13,7 +14,7 @@ namespace Google_hashcode_2021
 
             string path = "./a_example.txt";
 
-            ArrayList fileContent = ReadFile(path);
+            List<string> fileContent = ReadFile(path);
 
             foreach(string line in fileContent){
                 Console.WriteLine(line);
@@ -22,11 +23,11 @@ namespace Google_hashcode_2021
         }
 
 
-        static ArrayList ReadFile(string filePath)
+        static List<string> ReadFile(string filePath)
         {
             string[] lines = File.ReadAllLines(filePath);
 
-            ArrayList tabString = new ArrayList();
+            List<string> tabString = new List<string>();
 
             Array.ForEach(lines, i => { tabString.Add(i); });
 
