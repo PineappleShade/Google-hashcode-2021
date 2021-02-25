@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.IO;
 
 namespace Google_hashcode_2021
 {
@@ -9,24 +11,29 @@ namespace Google_hashcode_2021
             Console.WriteLine("Hello World!");
             Console.WriteLine("Hey br");
 
-            Console.WriteLine(ReadFile(a_example.txt));
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "\\a_example.txt");
 
+            Console.WriteLine(path);
+
+
+            ArrayList fileContent = ReadFile(path);
+
+            // Console.WriteLine(fileContent.ToString());
 
         }
 
 
-        public ArrayList ReadFile(string filePath)
+        static ArrayList ReadFile(string filePath)
         {
-            System.IO.StreamReader file = new System.IO.StreamReader(filePath);
+            string[] lines = System.IO.File.ReadAllLines(filePath);
+
             ArrayList tabString = new ArrayList();
-            int counter = 0;
 
-
-            while ((line = file.ReadLine()) != null)
+            foreach (string line in lines)
             {
-                tabString.add(line);
+                string[] words = line.Split(' ');
+                tabString.Add(words);
 
-                counter++;
             }
 
             return tabString;
