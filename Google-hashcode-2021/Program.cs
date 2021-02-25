@@ -154,15 +154,38 @@ namespace Google_hashcode_2021
             // {
             //     
             // }
-            // foreach (Car car in allCars)
-            // {
-            //     int totalSeconds = 0;
-            //     foreach (Street street in car.Path.StreetsPaths)
-            //     {
-            //         totalSeconds += street.TravelTimeFromBeginningToEnd;
-            //     }
-            //     Console.WriteLine("Total seconds for car " + car.Id + ": "  + totalSeconds);
-            // }
+
+            IDictionary<Car, int> dict = new Dictionary<Car, int>();
+
+            foreach (Car car in allCars)
+            {
+                int totalSeconds = 0;
+                foreach (Street street in car.Path.StreetsPaths)
+                {
+                    totalSeconds += street.TravelTimeFromBeginningToEnd;
+                }
+
+                if (totalSeconds < SIMULATION_TIME)
+                {
+                    dict.Add(car, totalSeconds);
+                }
+            }
+
+            List<KeyValuePair<Car, int>> myList = dict.ToList();
+
+            myList.Sort(
+                delegate (KeyValuePair<Car, int> pair1,
+                    KeyValuePair<Car, int> pair2)
+                {
+                    return pair1.Value.CompareTo(pair2.Value);
+                }
+            );
+
+            foreach (KeyValuePair<Car, int> kvp in myList)
+            {
+                Console.WriteLine("Car = {0}, Total seconds = {1}", kvp.Key.Id, kvp.Value);
+            }
+
 
             getHighestRouteTraffic();
         }
@@ -202,7 +225,7 @@ namespace Google_hashcode_2021
             // Print it all out
             foreach (KeyValuePair<Street, int> kvp in myList)
             {
-                Console.WriteLine("Key = {0}, Value = {1}", kvp.Key.StreetName, kvp.Value);
+                // Console.WriteLine("Key = {0}, Value = {1}", kvp.Key.StreetName, kvp.Value);
             }
 
         }
