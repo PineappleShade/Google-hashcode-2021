@@ -27,12 +27,9 @@ namespace Google_hashcode_2021
         {
             string[] lines = File.ReadAllLines(filePath);
 
-            List<string> tabString = new List<string>();
+            // Array.ForEach(lines, i => { tabString.Add(i); });
 
-            Array.ForEach(lines, i => { tabString.Add(i); });
-
-
-            return tabString;
+            return new List<string>(lines);
         }
     }
 }
