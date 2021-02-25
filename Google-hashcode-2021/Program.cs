@@ -16,6 +16,7 @@ namespace Google_hashcode_2021
 
         static List<Intersection> allIntersections = new List<Intersection>();
         static List<Street> allStreets = new List<Street>();
+        static List<Path> allPaths = new List<Path>();
 
         static void Main(string[] args)
         {
@@ -26,7 +27,7 @@ namespace Google_hashcode_2021
 
 
             foreach(string line in fileContent){
-                Console.WriteLine(line);
+                // Console.WriteLine(line);
             }
 
 
@@ -41,7 +42,22 @@ namespace Google_hashcode_2021
 
             foreach (Street st in allStreets)
             {
-                Console.WriteLine(st.StreetName);
+                // Console.WriteLine(st.StreetName);
+            }
+
+            foreach (Intersection inter in allIntersections)
+            {
+                Console.WriteLine(inter.Id);
+                Console.WriteLine("Input street:");
+                foreach (Street st in inter.StreetsInput)
+                {
+                    Console.WriteLine("    " + st.StreetName);
+                }
+                Console.WriteLine("Output street:");
+                foreach (Street st in inter.StreetsOutput)
+                {
+                    Console.WriteLine("    " + st.StreetName);
+                }
             }
         }
 
@@ -93,8 +109,23 @@ namespace Google_hashcode_2021
                 else
                 {
                     string[] path = new string[Int32.Parse(firstValuesSplit[0])];
+                    List<Street> streetList = new List<Street>();
+                    
 
 
+                    for (int x = 1; x < firstValuesSplit.Length; x++)
+                    {
+                        foreach (Street st in allStreets)
+                        {
+                            if (st.StreetName == firstValuesSplit[x])
+                            {
+                                streetList.Add(st);
+                            }
+                        }
+                    }
+
+                    Path pt = new Path(Int32.Parse(firstValuesSplit[0]), streetList);
+                    allPaths.Add(pt);
                 }
 
             }

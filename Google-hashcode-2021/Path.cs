@@ -7,12 +7,12 @@ namespace Google_hashcode_2021
     class Path
     {
         private int nbrOfStreetToTravel;
-        private string[] streetsPath;
+        private List<Street> streetsPaths;
 
-        public Path(int nbrOfStreetToTravel, string[] streetsPath)
+        public Path(int nbrOfStreetToTravel, List<Street> streetsPaths)
         {
             this.nbrOfStreetToTravel = nbrOfStreetToTravel;
-            this.streetsPath = streetsPath;
+            this.streetsPaths = streetsPaths;
         }
 
         public int NbrOfStreetToTravel
@@ -21,10 +21,10 @@ namespace Google_hashcode_2021
             set => nbrOfStreetToTravel = value;
         }
 
-        public string[] StreetsPath
+        public List<Street> StreetsPaths
         {
-            get => streetsPath;
-            set => streetsPath = value;
+            get => streetsPaths;
+            set => streetsPaths = value;
         }
     }
 }
