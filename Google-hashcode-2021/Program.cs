@@ -15,7 +15,6 @@ namespace Google_hashcode_2021
 
             Console.WriteLine(path);
 
-
             ArrayList fileContent = ReadFile(path);
 
             // Console.WriteLine(fileContent.ToString());
