@@ -39,7 +39,7 @@ namespace Google_hashcode_2021
 
         public void addStreetToOutput(Street s)
         {
-            streetsInput.Add(s);
+            streetsOutput.Add(s);
         }
 
         
