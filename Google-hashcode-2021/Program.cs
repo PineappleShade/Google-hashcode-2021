@@ -22,13 +22,13 @@ namespace Google_hashcode_2021
         static void Main(string[] args)
         {
             string path = "./a.txt";
-            RunSimulation(path);
+            string path2 = "./b.txt";
+            RunSimulation(path2);
 
             Console.WriteLine("SIMULATION_TIME=" + SIMULATION_TIME);
             Console.WriteLine("# INTERSECTIONS=" + NUM_INTERSECTIONS);
             Console.WriteLine("# STREETS=" + NUM_STREETS);
             Console.WriteLine("# CARS=" + NUM_CARS);
-            Console.WriteLine("POINTS ON CAR REACHING DESTINATION=" + POINTS_ON_SUCCESS);
 
             // foreach (Street st in allStreets)
             // {
@@ -149,9 +149,22 @@ namespace Google_hashcode_2021
             List<string> fileContent = ReadFile(filePath);
             parseInputDoc(fileContent);
 
+            // foreach (Intersection intersection in allIntersections)
+            // {
+            //     
+            // }
+
+            // foreach (Car car in allCars)
+            // {
+            //     int totalSeconds = 0;
+            //     foreach (Street street in car.Path.StreetsPaths)
+            //     {
+            //         totalSeconds += street.TravelTimeFromBeginningToEnd;
+            //     }
+            //     Console.WriteLine("Total seconds for car " + car.Id + ": "  + totalSeconds);
+            // }
+
         }
-
-
 
 
     }
