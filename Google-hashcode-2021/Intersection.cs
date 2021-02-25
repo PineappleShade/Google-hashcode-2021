@@ -7,27 +7,29 @@ namespace Google_hashcode_2021
     class Intersection
     {
         private int id;
-        private List<Street> streetsInput;
-        private List<Street> streetsOutput;
+        private List<Street> streetsInput = new List<Street>();
+        private List<Street> streetsOutput = new List<Street>();
+        private Queue<Car> carQueue;
+
 
         public Intersection(int id)
         {
             this.id = id;
         }
 
-        public int getID()
+        public int Id
         {
-            return id;
+            get => id;
         }
 
-        public List<Street> getStreetsInput()
+        public List<Street> StreetsInput
         {
-            return streetsInput;
+            get => streetsInput;
         }
 
-        public List<Street> getStreetsOutput()
+        public List<Street> StreetsOutput
         {
-            return streetsOutput;
+            get => streetsOutput;
         }
 
         public void addStreetToInput(Street s)
@@ -39,6 +41,8 @@ namespace Google_hashcode_2021
         {
             streetsInput.Add(s);
         }
+
+        
 
     }
 }
