@@ -9,7 +9,9 @@ namespace Google_hashcode_2021
         private int startingIntersection;
         private int endIntersection;
         private string streetName;
-        private int L;
+        private int travelTimeFromBeginingToEnd;
+
+
 
         public int StartingIntersection
         {
@@ -31,8 +33,8 @@ namespace Google_hashcode_2021
 
         public int L1
         {
-            get => L;
-            set => L = value;
+            get => travelTimeFromBeginingToEnd;
+            set => travelTimeFromBeginingToEnd = value;
         }
     }
 }

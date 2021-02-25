@@ -9,6 +9,12 @@ namespace Google_hashcode_2021
         private int nbrOfStreetToTravel;
         private string[] streetsPath;
 
+        public Path(int nbrOfStreetToTravel, string[] streetsPath)
+        {
+            this.nbrOfStreetToTravel = nbrOfStreetToTravel;
+            this.streetsPath = streetsPath;
+        }
+
         public int NbrOfStreetToTravel
         {
             get => nbrOfStreetToTravel;
