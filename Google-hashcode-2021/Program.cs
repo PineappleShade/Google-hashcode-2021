@@ -95,6 +95,22 @@ namespace Google_hashcode_2021
                     string[] path = new string[Int32.Parse(firstValuesSplit[0])];
 
 
+                    // Just setting the path based on string names
+                    for(int j = 1; j < firstValuesSplit.Length; j++)
+                    {
+                        path[j-1] = firstValuesSplit[j];
+                    }
+
+
+                    Car car = new Car()
+                    {
+                        Id = i - (NUM_STREETS + 1),
+                        Path = path
+                    };
+
+                    
+
+
                 }
 
             }
