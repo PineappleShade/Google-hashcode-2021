@@ -10,7 +10,7 @@ namespace Google_hashcode_2021
         private int endIntersection;
         private string streetName;
         private int travelTimeFromBeginningToEnd;
-        private Queue<Car> carQueue;
+        private Queue<Car> carQueue = new Queue<Car>();
 
         public Street()
         {

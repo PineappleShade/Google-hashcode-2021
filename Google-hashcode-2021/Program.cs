@@ -139,6 +139,7 @@ namespace Google_hashcode_2021
                     Path pt = new Path(Int32.Parse(firstValuesSplit[0]), streetList);
                     Car cr = new Car(( i - (NUM_STREETS + 1) ), pt, pt.StreetsPaths[0].EndIntersection);
                     pt.StreetsPaths[0].addToQueue(cr);
+
                     allCars.Add(cr);
                     allPaths.Add(pt);
                 }
