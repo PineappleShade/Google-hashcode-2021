@@ -22,18 +22,7 @@ namespace Google_hashcode_2021
         static void Main(string[] args)
         {
             string path = "./a.txt";
-
-
-            List<string> fileContent = ReadFile(path);
-
-
-            foreach(string line in fileContent){
-                // Console.WriteLine(line);
-            }
-
-
-            // Test
-            parseInputDoc(fileContent);
+            RunSimulation(path);
 
             Console.WriteLine("SIMULATION_TIME=" + SIMULATION_TIME);
             Console.WriteLine("# INTERSECTIONS=" + NUM_INTERSECTIONS);
@@ -41,21 +30,21 @@ namespace Google_hashcode_2021
             Console.WriteLine("# CARS=" + NUM_CARS);
             Console.WriteLine("POINTS ON CAR REACHING DESTINATION=" + POINTS_ON_SUCCESS);
 
-            foreach (Street st in allStreets)
-            {
-                // Console.WriteLine(st.StreetName);
-            }
-
-            foreach (Path pt in allPaths)
-            {
-                foreach (Street st in pt.StreetsPaths)
-                {
-                    Console.WriteLine(st.StreetName);
-                }
-
-                Console.WriteLine("");
-
-            }
+            // foreach (Street st in allStreets)
+            // {
+            //     // Console.WriteLine(st.StreetName);
+            // }
+            //
+            // foreach (Path pt in allPaths)
+            // {
+            //     foreach (Street st in pt.StreetsPaths)
+            //     {
+            //         Console.WriteLine(st.StreetName);
+            //     }
+            //
+            //     Console.WriteLine("");
+            //
+            // }
 
             // foreach (Intersection inter in allIntersections)
             // {
@@ -153,6 +142,13 @@ namespace Google_hashcode_2021
             string[] lines = File.ReadAllLines(filePath);
 
             return new List<string>(lines);
+        }
+
+        static void RunSimulation(string filePath)
+        {
+            List<string> fileContent = ReadFile(filePath);
+            parseInputDoc(fileContent);
+
         }
 
 
