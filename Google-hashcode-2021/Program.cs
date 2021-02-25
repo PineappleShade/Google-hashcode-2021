@@ -13,6 +13,7 @@ namespace Google_hashcode_2021
         static int NUM_CARS;
         static int POINTS_ON_SUCCESS;
 
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
