@@ -9,7 +9,7 @@ namespace Google_hashcode_2021
         private int startingIntersection;
         private int endIntersection;
         private string streetName;
-        private int travelTimeFromBeginingToEnd;
+        private int travelTimeFromBeginningToEnd;
 
         /*public Street(int startingIntersection, int endIntersection, string streetName, int travelTimeFromBeginingToEnd)
         {
@@ -39,8 +39,8 @@ namespace Google_hashcode_2021
 
         public int TravelTimeFromBeginingToEnd
         {
-            get => travelTimeFromBeginingToEnd;
-            set => travelTimeFromBeginingToEnd = value;
+            get => travelTimeFromBeginningToEnd;
+            set => travelTimeFromBeginningToEnd = value;
         }
     }
 }
