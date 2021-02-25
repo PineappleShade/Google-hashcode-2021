@@ -154,7 +154,15 @@ namespace Google_hashcode_2021
             // {
             //     
             // }
-
+            // foreach (Car car in allCars)
+            // {
+            //     int totalSeconds = 0;
+            //     foreach (Street street in car.Path.StreetsPaths)
+            //     {
+            //         totalSeconds += street.TravelTimeFromBeginningToEnd;
+            //     }
+            //     Console.WriteLine("Total seconds for car " + car.Id + ": "  + totalSeconds);
+            // }
 
             getHighestRouteTraffic();
         }
@@ -189,15 +197,7 @@ namespace Google_hashcode_2021
                     return pair2.Value.CompareTo(pair1.Value);
                 }
             );
-            // foreach (Car car in allCars)
-            // {
-            //     int totalSeconds = 0;
-            //     foreach (Street street in car.Path.StreetsPaths)
-            //     {
-            //         totalSeconds += street.TravelTimeFromBeginningToEnd;
-            //     }
-            //     Console.WriteLine("Total seconds for car " + car.Id + ": "  + totalSeconds);
-            // }
+            
 
             // Print it all out
             foreach (KeyValuePair<Street, int> kvp in myList)
