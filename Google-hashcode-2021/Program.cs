@@ -92,7 +92,9 @@ namespace Google_hashcode_2021
 
                 else
                 {
-                    
+                    string[] path = new string[Int32.Parse(firstValuesSplit[0])];
+
+
                 }
 
             }
