@@ -6,16 +6,28 @@ namespace Google_hashcode_2021
 {
     class Car
     {
+        
+
         private int id;
-        private string[] path;
+        private Path path;
         private int currentLocationIndex = 0;
+
+        public Car()
+        {
+        }
+        public Car(int id, Path path, int currentLocationIndex)
+        {
+            this.id = id;
+            this.path = path;
+            this.currentLocationIndex = currentLocationIndex;
+        }
 
         public int Id {
             get => id;
             set => id = value;
         }
 
-        public string[] Path
+        public Path Path
         {
             get => path;
             set => path = value;

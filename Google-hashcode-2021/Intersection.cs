@@ -10,8 +10,6 @@ namespace Google_hashcode_2021
         private List<Street> streetsInput = new List<Street>();
         private List<Street> streetsOutput = new List<Street>();
         
-
-
         public Intersection(int id)
         {
             this.id = id;

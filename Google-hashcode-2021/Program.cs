@@ -17,6 +17,7 @@ namespace Google_hashcode_2021
         static List<Intersection> allIntersections = new List<Intersection>();
         static List<Street> allStreets = new List<Street>();
         static List<Path> allPaths = new List<Path>();
+        static List<Car> allCars = new List<Car>();
 
         static void Main(string[] args)
         {
@@ -136,6 +137,8 @@ namespace Google_hashcode_2021
                     }
 
                     Path pt = new Path(Int32.Parse(firstValuesSplit[0]), streetList);
+                    Car cr = new Car(( i - (NUM_STREETS + 1) ), pt, pt.StreetsPaths[0].EndIntersection);
+                    allCars.Add(cr);
                     allPaths.Add(pt);
                 }
 
