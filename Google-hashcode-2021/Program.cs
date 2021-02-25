@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Google_hashcode_2021
 {
@@ -149,10 +150,49 @@ namespace Google_hashcode_2021
             List<string> fileContent = ReadFile(filePath);
             parseInputDoc(fileContent);
 
+
+
+            getHighestRouteTraffic();
         }
 
 
+        static void getHighestRouteTraffic()
+        {
+            IDictionary<Street,int> dict = new Dictionary<Street, int>();
+            
+            // Populate the dictionary
+            for (int x = 0; x < allStreets.Count; x++)
+            {
+                dict.Add(allStreets[x], 0);
+            }
+            
+            // Add them to the list
+            for (int x = 0; x < allPaths.Count; x++)
+            {
+                for (int y = 0; y < allPaths[x].StreetsPaths.Count; y++)
+                {
+                    dict[allPaths[x].StreetsPaths[y]] += 1;
+                }
+            }
 
+            // Sort it by value
+            List<KeyValuePair<Street, int>> myList = dict.ToList();
+            myList.Sort(
+                delegate (KeyValuePair<Street, int> pair1,
+                KeyValuePair<Street, int> pair2)
+                {
+                    // Biggest to smallest
+                    return pair2.Value.CompareTo(pair1.Value);
+                }
+            );
+
+            // Print it all out
+            foreach (KeyValuePair<Street, int> kvp in myList)
+            {
+                Console.WriteLine("Key = {0}, Value = {1}", kvp.Key.StreetName, kvp.Value);
+            }
+
+        }
 
     }
 }
