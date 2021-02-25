@@ -42,7 +42,7 @@ namespace Google_hashcode_2021
             set => streetName = value;
         }
 
-        public int L1
+        public int TravelTimeFromBeginningToEnd
         {
             get => travelTimeFromBeginningToEnd;
             set => travelTimeFromBeginningToEnd = value;
