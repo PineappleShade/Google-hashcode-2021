@@ -20,6 +20,7 @@ namespace Google_hashcode_2021
         static List<Path> allPaths = new List<Path>();
         static List<Car> allCars = new List<Car>();
         static List<KeyValuePair<Street, int>> trafficPerStreetOrdered;
+        static List<KeyValuePair<Car, int>> cardurationOrdered;
 
         static void Main(string[] args)
         {
@@ -182,10 +183,7 @@ namespace Google_hashcode_2021
                 }
             );
 
-            foreach (KeyValuePair<Car, int> kvp in myList)
-            {
-                Console.WriteLine("Car = {0}, Total seconds = {1}", kvp.Key.Id, kvp.Value);
-            }
+            cardurationOrdered = myList;
 
 
             getHighestRouteTraffic();
