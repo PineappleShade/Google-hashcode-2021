@@ -10,6 +10,7 @@ namespace Google_hashcode_2021
         private int endIntersection;
         private string streetName;
         private int travelTimeFromBeginningToEnd;
+        private Queue<Car> carQueue;
 
         public Street()
         {
@@ -46,6 +47,20 @@ namespace Google_hashcode_2021
         {
             get => travelTimeFromBeginningToEnd;
             set => travelTimeFromBeginningToEnd = value;
+        }
+
+        public Queue<Car> CarQueue
+        {
+            get => carQueue;
+        }
+
+        public void addToQueue(Car car)
+        {
+            carQueue.Enqueue(car);
+        }
+        public void removeFromQueue(Car car)
+        {
+            carQueue.Dequeue();
         }
     }
 }

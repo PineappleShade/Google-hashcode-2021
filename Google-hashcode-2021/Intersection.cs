@@ -9,7 +9,7 @@ namespace Google_hashcode_2021
         private int id;
         private List<Street> streetsInput = new List<Street>();
         private List<Street> streetsOutput = new List<Street>();
-        private Queue<Car> carQueue;
+        
 
 
         public Intersection(int id)
