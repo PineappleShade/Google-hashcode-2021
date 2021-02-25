@@ -18,7 +18,7 @@ namespace Google_hashcode_2021
             Console.WriteLine("Hello World!");
             Console.WriteLine("Hey br");
 
-            string path = "./a_example.txt";
+            string path = "./a.txt";
 
             List<string> fileContent = ReadFile(path);
 
@@ -28,11 +28,13 @@ namespace Google_hashcode_2021
 
 
             // Test
-            Console.WriteLine(SIMULATION_TIME);
-            Console.WriteLine(NUM_INTERSECTIONS);
-            Console.WriteLine(NUM_STREETS);
-            Console.WriteLine(NUM_CARS);
-            Console.WriteLine(POINTS_ON_SUCCESS);
+            parseInputDoc(fileContent);
+
+            Console.WriteLine("SIMULATION_TIME=" + SIMULATION_TIME);
+            Console.WriteLine("# INTERSECTIONS=" + NUM_INTERSECTIONS);
+            Console.WriteLine("# STREETS=" + NUM_STREETS);
+            Console.WriteLine("# CARS=" + NUM_CARS);
+            Console.WriteLine("POINTS ON CAR REACHING DESTINATION=" + POINTS_ON_SUCCESS);
 
         }
 
