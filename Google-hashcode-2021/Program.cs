@@ -75,7 +75,7 @@ namespace Google_hashcode_2021
                         StartingIntersection = Int32.Parse(firstValuesSplit[0]),
                         EndIntersection = Int32.Parse(firstValuesSplit[1]),
                         StreetName = firstValuesSplit[2],
-                        TravelTimeFromBeginingToEnd = Int32.Parse(firstValuesSplit[3])
+                        TravelTimeFromBeginningToEnd = Int32.Parse(firstValuesSplit[3])
                     };
 
                     Intersection startPoint = allIntersections[st.StartingIntersection];
