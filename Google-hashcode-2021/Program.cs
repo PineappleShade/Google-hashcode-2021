@@ -11,29 +11,25 @@ namespace Google_hashcode_2021
             Console.WriteLine("Hello World!");
             Console.WriteLine("Hey br");
 
-            string path = Path.Combine(Directory.GetCurrentDirectory(), "\\a_example.txt");
-
-            Console.WriteLine(path);
+            string path = "./a_example.txt";
 
             ArrayList fileContent = ReadFile(path);
 
-            // Console.WriteLine(fileContent.ToString());
+            foreach(string line in fileContent){
+                Console.WriteLine(line);
+            }
 
         }
 
 
         static ArrayList ReadFile(string filePath)
         {
-            string[] lines = System.IO.File.ReadAllLines(filePath);
+            string[] lines = File.ReadAllLines(filePath);
 
             ArrayList tabString = new ArrayList();
 
-            foreach (string line in lines)
-            {
-                string[] words = line.Split(' ');
-                tabString.Add(words);
+            Array.ForEach(lines, i => { tabString.Add(i); });
 
-            }
 
             return tabString;
         }
